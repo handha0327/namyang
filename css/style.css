@@ -1,0 +1,674 @@
+.inner{
+    max-width:1920px; 
+    /* min-width: 1200px;  */ /**반응형에서는 더이상 작아지면 안된다고 하는 것을 조심해야함. 반응형은 계속 작아져야함.**/
+    margin: 0 auto;
+    padding: 0 50px;
+    box-sizing: border-box; /*box-sizing 안 주면 실질적으로 padding 때문에 width가  커짐*/
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+button{
+    border: none;
+}
+
+b{
+    font-weight: normal;
+    display: block;
+}
+
+h1{
+    font-size: 3.9rem;
+    font-weight: 700;
+    line-height: 5rem;
+}
+
+h2{
+    font-size: 2.7rem;
+    font-weight: 700;
+    line-height: 5rem;}
+
+#wrap{/*position: relative;*/}
+#header{}
+#section{}
+#footer{}
+
+/*********************header****************************/
+#header{
+    z-index: 9;
+    position: absolute;
+    width: 100%;
+    height: 110px;
+    /* padding-top: 55px; */
+    transition: 1.5s;
+}
+#header.on{
+    background-color: #ffffff;
+    color: #222222;
+   height: 200px;
+    transition: 0.5s;
+}
+#header.on::before{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #c7c7c7;
+    display: block;
+    position: absolute;
+    top: 127px;
+}
+#header .logo{
+    padding-top: 35px;
+}
+#header .logo a{
+    width: 100%;
+}
+#header .language{
+    margin-right: 46px;
+    width: 48px;
+    padding-top: 55px;
+}
+#header .language .btn_lang{
+    height: 26px;
+    color: #ffffff;
+    align-items: center;
+    transition: 1.5s;
+    cursor: pointer;
+}
+#header .language .btn_lang.on{
+    color: #000000;
+    transition: 0.5s;
+}
+#header .language #content{
+    background-color: #ffffff;
+    width: 48px;
+    height: 117px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    margin-top: 20px;
+    display: none;
+    cursor: pointer;
+}
+#header .language #content p{
+    padding: 8px 0;
+}
+
+
+#header .header_icon{
+    padding-top: 55px;
+}
+#header .header_icon img{
+    height: 36px;
+}
+/*********************nav****************************/
+#header .flex{
+    justify-content: space-between;
+}
+#header .gnb{
+    padding-top: 55px;
+}
+#header .gnb > li{
+    width: 115px;
+    text-align: center;
+    margin: 0 30px;
+    position: relative;
+}
+#header .gnb > li > a{
+    display: block;
+    /* line-height: 100px; */
+    font-size: 1rem;
+    position: relative;
+    font-weight: 700;
+    color: #ffffff;
+    height: 66px;
+    transition: 1.5s;
+}
+#header .gnb > li > a.on{
+    color: #000000;
+    transition: 0.5s;
+}
+#header .gnb >li >a:hover{
+    color:#006940;
+}
+#header .gnb > li > a::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #006940;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    transform: scaleX(0);
+    transition: 0.5s;
+}
+#header .gnb > li > a:hover::after{
+    transform: scaleX(1);
+} /*추가적인  디자인 하고 싶을 때 이런 구조로 하기.*/
+#header .gnb .depth2{
+    position: absolute; /*top left bottom right 안 주면 그자리 그대로*/
+    width: 100%; /*부모에 맞춰서 100%. 부모에게 position: relative 주기*/
+    height: 0;
+    overflow: hidden; /*height가 0이기때문에 숨겨짐*/
+    /* margin: 25px 0; */
+}
+/*#header .gnb li:hover depth2{hegith:200px; transition: 0.5s;}를 주면 각각의 li를 선택했을 때 그 li의 ul들만 나옴.*/
+#header .gnb:hover .depth2{
+    height: 200px; 
+    transition: 0.5s;
+    margin: 20px 0;
+}
+#header .gnb .depth2 a{
+    display: block;
+    padding: 10.5px 0;
+    text-align: center;
+    font-size: 1rem; /*원하는 크기 나누기 기존 크기*/
+    font-weight: 400;
+    color: #222222;
+    box-sizing: border-box;
+}
+#header .gnb .depth2 a:hover{
+    font-weight: 700;
+    color: #006940;
+}
+#header .gnb::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 128px;
+    transition: 0.8s;
+} /* nav 펼쳐진는 부분 */
+#header .gnb:hover::before{
+    height: 372px;
+    transition: 0.5s;
+    padding: 15px 0;
+}
+
+/***********************header.scroll********************/
+#header.scroll{
+    background-color: #ffffff; 
+    height: 128px;transition: top 0.5s;
+}
+
+
+
+/*********************slide****************************/
+#slide {
+    /* background-image: url(../images/main_1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover; */
+    width: 100%;
+    height: 915px;
+    overflow: hidden;
+    position: relative;
+}
+#slide img{
+    width: 100%;
+}
+#slide h1{
+    font-size: 3.9rem;
+    color: #ffffff;
+    font-weight: 700;
+    position: absolute;
+    top: 40%;
+    left: 18%;
+    line-height: 5rem;
+}
+
+/*********************new****************************/
+#new{
+    background-color: rgba(34, 34, 34, 0.6);
+    width: 1200px;
+    height: 120px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0px;
+    left: 18%;
+}
+#new.flex{
+    justify-content: flex-start;
+}
+#new h4{
+    padding: 48px 69px 0 45px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+#new .slide_box{margin:40px 0;height:2em;border:none; overflow: hidden;} /*border -> none | + overflow : hidden*/ /*만약 li에 margin을 주면 밀리는 경우가 생김. 그러면 트렌스폼으로 옮기려다가 오류가 생김.*/
+#new .notice_list{line-height:2rem; color: #ffffff; /*rem을 em으로 바꿔도 되지만, font-size가 있는 경우에 em을 사용하면 크기가 슬라이드 박스랑 달라질 수 있음.*/
+                position:relative;}
+#new .notice_list li span{
+    padding-right: 36px;
+}
+
+/*********************section1****************************/
+#section1{
+    padding-top: 100px;
+}
+#section1 h1{
+    font-size: 2.7rem;
+    font-weight: 700;
+    line-height:3rem;
+    text-align: center;
+}
+#section1 h1 b{
+    font-weight: 700;
+}
+#section1 h1 b:nth-of-type(1){
+    display:inline
+}
+#section1 h1 b:nth-of-type(2){
+    display:inline
+}
+#section1 h1 span{
+    color: #7DC242;
+}
+#section1 .flex{
+    justify-content: space-between;
+}
+#section1 .sec1_list_pc{
+    padding-top: 70px;
+}
+#section1 .sec1_list_pc .sec1_img{
+    width: 581px;
+    position: relative;
+    overflow: hidden;
+}
+#section1 .sec1_list_pc .sec1_img img{
+    transition-duration: 0.5s;
+}
+#section1 .sec1_list_pc .sec1_img:hover img{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+#section1 .sec1_list_pc .sec1_img h3{
+    position: absolute;
+    bottom: 210px;
+    left: 42px;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+#section1 .sec1_list_pc .sec1_img p{
+    color: #ffffff;
+    font-size: 1.3rem;
+    position: absolute;
+    bottom: 161px;
+    left: 42px;
+    font-weight: 400;
+    opacity: 0;
+}
+#section1 .sec1_list_pc .sec1_img:hover p{
+    animation: 1s sec1_p forwards;
+}
+
+@keyframes sec1_p{
+    0% {opacity: 0; bottom: 140px;}
+    100% {opacity: 1; bottom: 161px;}
+}
+
+
+/*********************section2****************************/
+#section2 .flex{
+    justify-content: space-between;
+    padding-top: 100px;
+    margin: 0 340px;
+}
+#section2 .flex .left_tit{
+    padding-top: 159px;
+    width:50%;
+}
+#section2 .flex .left_tit h4{
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height:3rem;
+}
+#section2 .flex .left_tit h4 b{
+    font-weight: 700;
+}
+#section2 .flex .left_tit h4 b span{
+    color: #006940;
+}
+#section2 .flex .left_tit p{
+    padding-top: 39px;
+    line-height: 1.5rem;
+    font-size: 1.3rem;
+}
+#section2 .flex .rigth_txt{
+    position: relative;
+    width: 50%;
+}
+#section2 .flex .rigth_txt .img{
+    width: 100%;
+    overflow: hidden;
+}
+#section2 .flex .right_txt .img img{
+    width: 100%;
+}
+#section2 .flex .rigth_txt .txt{
+    width: 621px;
+    height: 342px;
+    background-color: #7DC242;
+    color: #ffffff;
+    text-align: center;
+    border-top-left-radius: 90px;
+    position: absolute;
+    bottom: -90px;
+    left: -146px;
+    overflow: hidden;
+    padding-top: 50px;
+}
+#section2 .flex .rigth_txt .txt h4{
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 3rem;
+}
+#section2 .flex .rigth_txt .txt p{
+    font-size: 1.3rem;
+    padding-top: 27px;
+    line-height: 2rem;
+}
+/*********************section3****************************/
+#section3{
+    padding-top: 100px;
+}
+#section3 .inner {
+    background-image: url(../images/care_cure.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 929px;
+    margin: 0 154px;
+}
+#section3 .sec3_tit{
+    text-align: center;
+    color: #ffffff;
+    padding-top: 40px;
+}
+#section3 .sec3_tit p{
+    line-height: 1.5rem;
+    padding-top: 32px;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+#section3 .sec3_tit p span{
+    font-weight: 700;
+    color: #7DC242;
+}
+#section3 .icon_box.flex{
+    justify-content: space-between;
+    margin: 0 260px;
+    padding-top: 160px;
+}
+#section3 .icon_box .icon img{
+    width: 134px;
+}
+#section3 .icon_box .icon span{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: block;
+    width: 270px;
+    height: 270px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#section3 .icon_box .txt{
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    padding-top: 42px;
+    color: #ffffff;
+}
+
+/*********************banner****************************/
+#banner {
+    margin: 100px 0;
+}
+
+/*********************section4****************************/
+#section4 {
+    position: relative;
+}
+#section4::after {
+    content: '';
+    display: block;
+    width: 900px;
+    height: 900px;
+    background-color: #7DC242;
+    border-radius: 50%;
+    z-index: -1;
+    position: absolute;
+    right: -200px;
+    top: -300px;
+}
+#section4 > h2 {
+    text-align: center;
+}
+#section4 h2 span{
+    color: #7DC242;
+}
+#section4 p{
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+}
+#section4 .slider div .img_count .slide_box1{
+    width: 50%;
+    padding-left: 320px;
+    padding-top: 200px;
+}
+#section4 .slider div .img_count .slide_box1 p{
+    margin-bottom: 53px;
+}
+#section4 .slider div .img_count .slide_box1 a{
+    padding: 10px 30px;
+    border: 1px solid #666666;
+    border-radius: 50px;
+}
+
+
+/*********************section5****************************/
+#section5{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#section5 .delivery{
+    background-image: url(../images/delivery.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: calc(50% - 20px);
+    margin-right: 40px;
+}
+#section5 .employment{
+    background-image: url(../images/employment.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: calc(50% - 20px);
+    margin-left: 40px;
+}
+#section5 .delivery, #section5 .employment{
+    padding: 183px 0 70px 60px;
+}
+#section5 h4 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    padding-bottom: 32px;
+}
+#section5 p{
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 1.5rem;
+    padding-bottom: 40px;
+}
+#section5 a{
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 11px 30px;
+    border-radius: 50px;
+}
+
+/*********************footer****************************/
+
+#footer{
+    background-color: #f0f0f0;
+    color: #000000;
+}
+#footer .foot_top {
+    border-bottom: 1px solid #bababa;
+}
+#footer .inner .flex {
+    justify-content: space-between;
+}
+#footer .inner .foot_top .flex{
+    justify-content: space-between;
+}
+#footer .foot_top .flex .foot_txt1 a{
+    margin: 27px 47px;
+    
+}
+#footer .foot_top .flex .foot_txt1 a:first-child{
+    margin-left: 0;
+}
+#footer .foot_top .foot_icon a span{
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+#footer .foot_top .foot_icon a span:last-child{
+    margin-right: 0;
+}
+#footer .foot_top .foot_icon a img{
+    width:30px;
+}
+#footer .foot_bottom .foot_txt2{
+    padding-top: 40px;
+    line-height: 1.3rem;
+    padding-bottom: 50px;
+}
+#footer .foot_bottom .foot_txt2 p:last-child{
+    padding-top: 18px;
+}
+#footer .foot_bottom .foot_txt3{
+    padding-top: 40px;
+}
+#footer .foot_bottom .foot_txt3 h4{
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-right: 50px;
+}
+#footer .foot_bottom .foot_txt3 div p:first-child{
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #006940;
+}
+#footer .foot_bottom .foot_txt3 div p b{
+    display: inline-block;
+    font-weight: 700;
+    padding-right: 13px;
+}
+#footer .foot_bottom .foot_txt3 div p:nth-of-type(2){
+    padding-top: 20px;
+}
+
+/**********************quick_btn************************/
+#quick_btn{
+    position: fixed;
+    right: 48px;
+    bottom: 100px;
+}
+#quick_btn div button{
+    display: block;
+    padding-top: 10px;
+}
+#quick_btn .consulting .con_btn img{
+    height: 43px;
+}
+#quick_btn .consulting .con_btn span{
+    background-color: #5FC607;
+    border-radius: 50%;
+    display: block;
+    width: 82px;
+    height: 82px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#quick_btn .namyangmall .mall_btn img{
+    height: 29px;
+}
+#quick_btn .namyangi .i_btn img{
+    height: 60px;
+}
+#quick_btn .namyangmall .mall_btn span, #quick_btn .namyangi .i_btn span{
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+    width: 82px;
+    height: 82px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#quick_btn .top_btn{
+    background-color: #222222;
+    width: 82px;
+    height: 31px;
+    border-radius: 50px;
+    margin-top: 10px;
+    font-size: 0px;
+}
+#quick_btn .top_btn::after{
+    content: ''; 
+    display: block; 
+    width:10px; 
+    height:10px;
+    border-bottom:2px solid #a7a7a7; 
+    border-right: 2px solid #a7a7a7; 
+    margin: auto;
+    transform: rotate(223deg);
+    translate: (-2px -2px);
+}
+
+/**클릭시**/
+/* #quick_btn div, #quick_btn button{
+    box-shadow: 4px 3px 4px rgba(0,0,0,0.25) ;
+    border-radius: 50%;
+} */
+#quick_btn .consulting h4{
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    
+}
+#quick_btn .consulting h4 span{
+    color: #006940; 
+}
+#quick_btn .namyangi, #quick_btn .namyangmall{
+    position: relative;
+}
+#quick_btn .namyangi .i_on, #quick_btn .namyangmall .mall_on{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 50px;
+}
