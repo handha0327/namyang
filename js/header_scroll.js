@@ -12,12 +12,12 @@ $(function(){
     $('#header').addClass('on');
     $('#header .gnb > li > a').addClass('on');
     $('#header .language .btn_lang').addClass('on');
-    $('#header .header_icon img').attr('src','../images/mypage_black.png');
+    $('#header .header_icon img').attr('src','images/mypage_black.png');
     },function(){
         $('#header').removeClass('on');
         $('#header .gnb > li > a').removeClass('on');
         $('#header .language .btn_lang').removeClass('on');
-        $('#header .header_icon img').attr('src','../images/mypage_white.png');
+        $('#header .header_icon img').attr('src','images/mypage_white.png');
     })
 })
 
