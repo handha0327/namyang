@@ -1,3 +1,7 @@
+#wrap{
+    overflow: hidden;
+}
+
 .inner{
     max-width:1920px; 
     /* min-width: 1200px;  */ /**반응형에서는 더이상 작아지면 안된다고 하는 것을 조심해야함. 반응형은 계속 작아져야함.**/
@@ -202,7 +206,7 @@ h2{
 
 
 /*********************slide****************************/
-#slide {
+#slide div{
     /* background-image: url(../images/main_1.jpg);
     background-repeat: no-repeat;
     background-size:cover; */
@@ -211,17 +215,54 @@ h2{
     overflow: hidden;
     position: relative;
 }
-#slide img{
+#slide .slick-active img{
     width: 100%;
+    transform: scale(2) translate(0, 100px); opacity: 0;
+    animation: 7s main_img forwards;
 }
-#slide h1{
+#slide .slick-active h1{
     font-size: 3.9rem;
     color: #ffffff;
     font-weight: 700;
     position: absolute;
-    top: 40%;
+    bottom: 10%;
     left: 18%;
     line-height: 5rem;
+    opacity: 0;
+    animation: 4s main_txt forwards;
+}
+
+@keyframes main_img{
+    0% {transform: scale(2); opacity: 0;}
+    50%, 100% {transform: scale(1); opacity: 1;}
+}
+@keyframes main_txt{
+    0% {opacity: 0; bottom: 10%;}
+    100% {opacity: 1; bottom: 40%;}
+}
+
+#slide .slick-dots {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#slide .slick-dots button {
+    background: #ffffff;
+    font-size: 0px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 10px;
+    transform: translateY(-120px);
+}
+
+#slide .slick-dots li.slick-active button {
+    background: #006940;
 }
 
 /*********************new****************************/
@@ -231,7 +272,7 @@ h2{
     height: 120px;
     box-sizing: border-box;
     position: absolute;
-    bottom: 0px;
+    bottom: 54px;
     left: 18%;
 }
 #new.flex{
@@ -318,15 +359,20 @@ h2{
 
 
 /*********************section2****************************/
+#section2{
+    position: relative;
+}
 #section2 .flex{
     justify-content: space-between;
     padding-top: 100px;
     margin: 0 340px;
+    position: relative;
 }
 #section2 .flex .left_tit{
     padding-top: 159px;
     width:50%;
 }
+
 #section2 .flex .left_tit h4{
     font-size: 2.8rem;
     font-weight: 700;
@@ -347,39 +393,69 @@ h2{
     position: relative;
     width: 50%;
 }
-#section2 .flex .rigth_txt .img{
+#section2 .flex .rigth_txt .img_count img{
     width: 100%;
     overflow: hidden;
 }
-#section2 .flex .right_txt .img img{
-    width: 100%;
-}
-#section2 .flex .rigth_txt .txt{
-    width: 621px;
-    height: 342px;
-    background-color: #7DC242;
+
+#section2 .flex .rigth_txt2{
     color: #ffffff;
     text-align: center;
+    padding-top: 50px;
+    background-color: #7DC242;
+    width: 621px;
+    height: 342px;
+    display: block;
     border-top-left-radius: 90px;
     position: absolute;
     bottom: -90px;
-    left: -146px;
-    overflow: hidden;
-    padding-top: 50px;
+    right: 150px;
+    z-index: 2;
 }
-#section2 .flex .rigth_txt .txt h4{
+#section2 .flex .rigth_txt2 .txt h4{
     font-size: 2rem;
     font-weight: 700;
     line-height: 3rem;
 }
-#section2 .flex .rigth_txt .txt p{
+#section2 .flex .rigth_txt2 .txt p{
     font-size: 1.3rem;
     padding-top: 27px;
     line-height: 2rem;
 }
+#section2 .slick-arrow{
+    font-size: 0;
+}
+#section2 .slick-prev::after{
+    content: ''; 
+    display: block; 
+    width:33px; 
+    height:33px;
+    border-bottom:2px solid #a7a7a7;
+    border-right: 2px solid #a7a7a7; 
+    margin: auto;
+    transform: rotate(133deg);
+    translate: (-2px -2px);
+    position: absolute;
+    left: -900px;
+    bottom: 300px;
+}
+#section2 .slick-next::after{content: ''; 
+    display: block; 
+    width:33px; 
+    height:33px;
+    border-bottom:2px solid #a7a7a7; 
+    border-right: 2px solid #a7a7a7; 
+    margin: auto;
+    transform: rotate(315deg);
+    translate: (-2px -2px);
+    position: absolute;
+    right: -300px;
+    bottom: 300px;
+}
+
 /*********************section3****************************/
 #section3{
-    padding-top: 100px;
+    padding-top: 200px;
 }
 #section3 .inner {
     background-image: url(../images/care_cure.jpg);
@@ -531,6 +607,7 @@ h2{
 }
 #footer .inner .foot_top .flex{
     justify-content: space-between;
+
 }
 #footer .foot_top .flex .foot_txt1 a{
     margin: 27px 47px;
@@ -591,7 +668,7 @@ h2{
 #quick_btn{
     position: fixed;
     right: 48px;
-    bottom: 100px;
+    bottom: 40px;
 }
 #quick_btn div button{
     display: block;
@@ -630,6 +707,7 @@ h2{
 }
 #quick_btn .top_btn{
     background-color: #222222;
+    /* padding: 0 30px 8px 30px; */
     width: 82px;
     height: 31px;
     border-radius: 50px;
@@ -644,8 +722,8 @@ h2{
     border-bottom:2px solid #a7a7a7; 
     border-right: 2px solid #a7a7a7; 
     margin: auto;
-    transform: rotate(223deg);
-    translate: (-2px -2px);
+    transform: rotate(223deg) translate(5px, 5px);
+    text-align: center;
 }
 
 /**클릭시**/
@@ -653,14 +731,67 @@ h2{
     box-shadow: 4px 3px 4px rgba(0,0,0,0.25) ;
     border-radius: 50%;
 } */
-#quick_btn .consulting h4{
+#quick_btn .consulting{
+    position: relative;
+}
+#quick_btn .consulting .consulting_box{
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 30px;
+    position: absolute;
+    top: -0px;
+    right: 0;
+    display: none;
+    opacity: 0;
+}
+#quick_btn .consulting .consulting_box.active{
+    display: block;
+    top: -530px;
+    opacity: 1;
+}
+#quick_btn .consulting .consulting_box h4{
     font-size: 1.3rem;
     font-weight: 700;
     text-align: center;
-    
+    line-height: 1.5rem;
 }
-#quick_btn .consulting h4 span{
+#quick_btn .consulting .consulting_box h4 span{
     color: #006940; 
+}
+#quick_btn .consulting .consulting_box div{
+    padding-top: 17px;
+}
+#quick_btn .consulting .consulting_box div div{
+    padding-top: 10px;
+}
+#quick_btn .consulting .consulting_box div div label{
+    font-size: 0;
+}
+#quick_btn .consulting .consulting_box div div:nth-child(2) label{
+    position: absolute;
+    bottom: 5px;
+    left: 75px;
+}
+#quick_btn .consulting .consulting_box div div input{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #989898;
+}
+#quick_btn .consulting .consulting_box div textarea{
+    width: 340px;
+    height: 226px;
+    margin: 25px 0 10px 0;
+    border-color: #989898;
+}
+#quick_btn .consulting .consulting_box button{
+    background-color: #006940;
+    padding: 5px 34px;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0 auto;
 }
 #quick_btn .namyangi, #quick_btn .namyangmall{
     position: relative;
@@ -671,4 +802,8 @@ h2{
     right: 0;
     z-index: -1;
     border-radius: 50px;
+    display: none;
+}
+#quick_btn .namyangi.active .i_on, #quick_btn .namyangmall.active .mall_on{
+    display: block;
 }

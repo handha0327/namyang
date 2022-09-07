@@ -19,6 +19,7 @@
 <script src="js/header_scroll.js"></script>
 <script src="js/new_slide.js"></script>
 <script src="js/language.js"></script>
+<script src="js/quick.js"></script>
 <script src="js/lazy.js"></script>
 
 <script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
@@ -78,23 +79,34 @@
       </div>
     </div>
   </header>
-  <div id="slide">
-    <div class="slide01">
-      <img src="images/main_1.jpg" alt="우유 마시는 아이">
-      <h1>식생활 개선을 통한<br>
-      건강한 미래사회 창조</h1>
-    </div>
-    <section id="new" class="flex">
-      <h4>새소식</h4>
-      <div class="slide_box">
-        <ul class="notice_list">
-            <li> <span>22.05.12 </span> 남양유업, 연세대 세브란스 병원과 특수분유 ‘케토니아’ 공동연구 협약 체결</li>
-            <li> <span>22.07.13 </span> 남양유업, 연세대 세브란스 병원과 특수분유 ‘케토니아’ 공동연구 협약 체결</li>
-            <li><span>22.07.15 </span> “우리 아이 구명조끼 확인하세요”…남양유업-해양경찰청 해양사고 예방 캠페인 전개</li>
-        </ul>
-      </div>
-    </section>
+  <div id="slide" class="lazy slider" data-sizes="50vw">
+      <div class="slide01" data-sizes="100vw">
+        <img src="images/main_1.jpg" alt="우유 마시는 아이">
+        <h1>식생활 개선을 통한<br>
+        건강한 미래사회 창조</h1>
+      </div><!--1-->
+      <div class="slide02" data-sizes="100vw">
+        <img src="images/main_2.jpg" alt="우유공장">
+        <h1>최신 기술 & 합리적 경영<br>
+          믿을 수 있는 고품질 제품 생산</h1>
+      </div><!--2-->
+      <div class="slide03" data-sizes="100vw">
+        <img src="images/main_3.jpg" alt="우유를 들고 있는 아이">
+        <h1>2세 건강에 앞장서는<br>
+          세계 최고의 유업회사</h1>
+      </div><!--3-->
   </div>
+
+  <section id="new" class="flex">
+    <h4>새소식</h4>
+    <div class="slide_box">
+      <ul class="notice_list">
+          <li> <span>22.05.12 </span> 남양유업, 연세대 세브란스 병원과 특수분유 ‘케토니아’ 공동연구 협약 체결</li>
+          <li> <span>22.07.13 </span> 남양유업, 연세대 세브란스 병원과 특수분유 ‘케토니아’ 공동연구 협약 체결</li>
+          <li><span>22.07.15 </span> “우리 아이 구명조끼 확인하세요”…남양유업-해양경찰청 해양사고 예방 캠페인 전개</li>
+      </ul>
+    </div>
+  </section>
   
   <section id="section1" class="inner">
     <h1 class="title"><b>남양유업은</b> 
@@ -130,33 +142,73 @@
             우리 모두 안전한 지구를 만들기 위한<br>
             ‘Save the Earth’ 활동들을 펼쳐 나가겠습니다.</p>
         </div><!--left_tit-->
-        <div class="rigth_txt lazy slider" data-sizes="50vw">
-          <div>
-          <div class="img_count">
-            <img src="images/Environment_1.jpg" alt="환경경영캠페인 1탄" data-sizes="100vw" >
+        <div class="rigth_txt ">
+          <div class="rigth_txt1 slider">
+            <div class="img_count" data-sizes="100vw" >
+              <img src="images/Environment_1.jpg" alt="환경경영캠페인 1탄">
+            </div>
+            <div class="img_count">
+              <img src="images/Environment_2.jpg" alt="환경경영캠페인 2탄" data-sizes="100vw" >
+              </div>
+            <div class="img_count">
+              <img src="images/Environment_3.jpg" alt="환경경영캠페인 3탄" data-sizes="100vw" >
+              </div>
+            <div class="img_count">
+              <img src="images/Environment_4.jpg" alt="환경경영캠페인 4탄" data-sizes="100vw" >
+              </div>
+            <div class="img_count">
+              <img src="images/Environment_5.jpg" alt="환경경영캠페인 5탄" data-sizes="100vw" >
+              </div>
+            <div class="img_count">
+              <img src="images/Environment_6.jpg" alt="환경경영캠페인 6탄" data-sizes="100vw" >
+              </div>
+            </div> <!--1번-->
+
+            <div class="rigth_txt2 slider">
             <div class="txt">
-              <h4>폐소재 기부</h4>
-              <p>남양유업 제품 생산 중 발생하는<br>
-                불용팩 등 폐소재를<br>
-                서울새활용플라자 입주기업에<br>
-                소재기부하여 <br>
-                업사이클링 소재로 새활용</p>
+              <h4>빨대를 돌려줘</h4>
+              <p>양말목을 새활용해<br>
+                일회용 빨대로 꾸밀 수 있는<br>
+                인형 제작, 배포하여 <br>
+                빨대 분리수거에 흥미 유도</p>
               </div> <!--txt-->
-          </div>
-          </div><!--1-->
-          <div>
-          <div class="img_count">
-            <img src="images/Environment_2.jpg" alt="환경경영캠페인 1탄" data-sizes="100vw" >
-            <div class="txt">
-              <h4>으어엉어어ㅏㅇ아아아</h4>
-              <p>남양유업 제품 생산 중 발생하는<br>
-                불용팩 등 폐소재를<br>
-                서울새활용플라자 입주기업에<br>
-                소재기부하여 <br>
-                업사이클링 소재로 새활용</p>
-              </div> <!--txt-->
-          </div>
-          </div><!--1-->
+              <div class="txt">
+                <h4>지.당.한 <br>
+                  - 지구를 지키는 당연한 모금</h4>
+                <p>소형 플라스틱을 모아<br>
+                  분리배출 할 수 있도록<br>
+                  소재 수급함 제작 및 배포</p>
+                </div> <!--txt-->
+              <div class="txt">
+                <h4>비플라스틱 장난감<br>
+                  '스토리빌더' 제작
+                </h4>
+                <p>자사 제품 지작과정에서 나오는<br>
+                  폐소재로 새활용 교육 키트 제작 진행</p>
+                </div> <!--txt-->
+              <div class="txt">
+                <h4>PLA-X - 친환경 가위, <br> 
+                  미니 플라스틱 반납함 제작
+                </h4>
+                <p>소비자가 직접 모아 전달한 플라스틱 뚜껑을 새활용하여<br>
+                빨대 없이 멸균우유/음료를 음용할 수 있는<br>
+                친환경 가위 제작</p>
+                </div> <!--txt-->
+              <div class="txt">
+                <h4>우유팩 수거 캠페인</h4>
+                <p>우유팩/멸균팩 분리배출 인식 제고<br>
+                  및 자원순환 확대 위한 우유팩수거함 제작/설치 지원</p>
+                </div> <!--txt-->
+              <div class="txt">
+                <h4>폐소재 기부</h4>
+                <p>남양유업 제품 생산 중 발생하는<br>
+                  불용팩 등 폐소재를<br>
+                  서울새활용플라자 입주기업에<br>
+                  소재기부하여 <br>
+                  업사이클링 소재로 새활용</p>
+                </div> <!--txt-->
+          </div><!--2번-->
+
         </div><!--right_txt-->
       </div> <!--flex-->
   </section>
@@ -218,7 +270,7 @@
               소중한 내 아기를 위해(6개월 이후 ~ 첫돌)</p>
             <a href="#">자세히보기</a>
             </div>
-            <img src="images/product_1.png" alt="유기농 산양유아식">
+            <img src="images/product_2.png" alt="맛있는 우유 GT">
         </div><!--img_count-->
       </div><!--2-->
     </div><!--lazy slider-->
@@ -285,6 +337,18 @@
       <div class="consulting_box">
         <h4><span>제품</span>과 <span>가정배달</span>에 관련된 상담은<br>
           여기에 적어주세요</h4>
+        <div>
+          <div class="name">
+            <label>이름을 입력해주세요.</label>
+            <input type="text" placeholder="이름을 입력해주세요.">
+          </div>
+          <div class="phone">
+            <label>전화번호를 입력해주세요.</label>
+            <input type="text" placeholder="전화번호를 입력해주세요.">
+          </div>
+          <textarea placeholder="내용을 입력해주세요."></textarea>
+        </div>
+        <button>제출하기</button>
       </div>
     </div>
     <div class="namyangmall">
