@@ -1,6 +1,6 @@
 $(function(){
     $(window).scroll(function(){
-        if ($(document).scrollTop() >= 10) {
+        if ($(document).scrollTop() >= 300) {
             $('#header').addClass('scroll');
         } else {
            $('#header').removeClass('scroll');

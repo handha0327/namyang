@@ -6,5 +6,5 @@ $(function(){
         $('.notice_list').append($('.notice_list>li:first-child'));
         $('.notice_list>li:last-child').css({'margin-top':0});
     });
-    },3000)
+    },5000)
 })//end
