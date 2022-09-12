@@ -1,11 +1,17 @@
 $(function(){
     $(window).scroll(function(){
-        if ($(document).scrollTop() >= 300) {
-            $('#header').addClass('scroll');
+        if ($(document).scrollTop() >= 3) {
+            $('header').addClass('scroll');
+            $('#sub_header').addClass('scroll');
+            $('#header .header_icon img').attr('src','images/mypage_black.png');
         } else {
-           $('#header').removeClass('scroll');
+           $('header').removeClass('scroll');
+           $('#sub_header').removeClass('scroll');
+           $('#header .header_icon img').attr('src','images/mypage_white.png');
+           $('#sub_header .header_icon img').attr('src','images/mypage_black.png');
         }
-  })
+      })
+
 
   //네비 내려올 때 헤더 색 바뀌게 해줌
   $('.gnb').hover(function(){
@@ -18,6 +24,16 @@ $(function(){
         $('#header .gnb > li > a').removeClass('on');
         $('#header .language .btn_lang').removeClass('on');
         $('#header .header_icon img').attr('src','images/mypage_white.png');
+    })
+
+  $('.sub_gnb').hover(function(){
+    $('#header').addClass('on');
+    $('#header .gnb > li > a').addClass('on');
+    $('#header .language .btn_lang').addClass('on');
+    },function(){
+        $('#header').removeClass('on');
+        $('#header .gnb > li > a').removeClass('on');
+        $('#header .language .btn_lang').removeClass('on');
     })
 })
 
