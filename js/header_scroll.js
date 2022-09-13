@@ -24,6 +24,7 @@ $(function(){
         $('#header .gnb > li > a').removeClass('on');
         $('#header .language .btn_lang').removeClass('on');
         $('#header .header_icon img').attr('src','images/mypage_white.png');
+        $('#header.scroll .header_icon img').attr('src','images/mypage_black.png');
     })
 
   $('.sub_gnb').hover(function(){

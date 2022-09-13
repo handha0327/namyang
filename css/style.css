@@ -554,7 +554,7 @@ h2{
 }
 #section4 .slider div .img_count .slide_box1 {
     width: 50%;
-    padding-left: 150px;
+    padding-left: 100px;
     padding-top: 200px;
 }
 #section4 .slider .slick-active div .img_count .slide_box1 h2{
@@ -669,7 +669,7 @@ h2{
     transform: translateY(90px);
 }
 #section5 .inner div:hover > h4 {
-    animation: sec_5_h4_hover 2s forwards
+    animation: sec_5_h4_hover 0.8s forwards
 }
 
 @keyframes sec_5_h4_hover{
@@ -685,7 +685,7 @@ h2{
     transform: translateY(5px); opacity: 0;
 }
 #section5 .inner div:hover > p{
-    animation: sec_5_hover 2s 0.8s forwards;
+    animation: sec_5_hover 0.5s 0.3s forwards;
 }
 #section5 a{
     color: #ffffff;
@@ -697,7 +697,7 @@ h2{
     width: 85px;
 }
 #section5 .inner div:hover > a{
-    animation: sec_5_hover 2s 0.8s forwards;
+    animation: sec_5_hover 0.5s 0.3s forwards;
 }
 
 
@@ -871,8 +871,8 @@ h2{
     border-radius: 10px;
     /* padding: 30px; */
     position: absolute;
-    bottom: 100px;
-    right: 0;
+    bottom: -250px;
+    right: 100px;
     /* display: none; */
     z-index: -1;
     height: 0;
@@ -885,7 +885,7 @@ h2{
 #quick_btn .consulting .consulting_box.active{
     /* display: block; */
     padding: 30px ;
-    height: 457px;
+    height: 480px;
     /* bottom: 100px; */
     /* opacity: 1; */
 }
@@ -896,12 +896,10 @@ h2{
     font-weight: 700;
     text-align: center;
     line-height: 1.5rem;
+    padding-top: 20px;
 }
 #quick_btn .consulting .consulting_box h4 span{
     color: #006940; 
-}
-#quick_btn .consulting .consulting_box div{
-    padding-top: 17px;
 }
 #quick_btn .consulting .consulting_box div div{
     padding-top: 10px;
@@ -919,12 +917,20 @@ h2{
     width: 100%;
     border: none;
     border-bottom: 1px solid #989898;
+    padding-bottom: 8px;
+    text-align: center;
 }
 #quick_btn .consulting .consulting_box div textarea{
     width: 340px;
     height: 226px;
     margin: 25px 0 10px 0;
-    border-color: #989898;
+    border:none;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+#quick_btn .consulting .consulting_box div textarea::placeholder{
+    text-align: center;
+    padding-top: 30%;
 }
 #quick_btn .consulting .consulting_box button{
     background-color: #006940;
@@ -934,6 +940,15 @@ h2{
     font-size: 0.9rem;
     font-weight: 400;
     margin: 0 auto;
+    margin-top: 10px;
+}
+#quick_btn .consulting .consulting_box img{
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
 }
 #quick_btn .namyangi, #quick_btn .namyangmall{
     position: relative;
@@ -1145,19 +1160,40 @@ h2{
         top: -350px; 
     }
     #section4 .slider div .img_count .slide_box1 {
-        /* width: 100%; */
+        width: 100%;
         padding-left: 100px;
-        /* padding-top: 200px; */
+        padding-top: 20px;
+        grid-area: area2;
+        
+    }
+    #footer .foot_bottom .foot_txt3 h4 {
+        font-size: 1.2rem;
+        /* font-weight: 700;
+        padding-right: 50px; */
     }
     #section4 p {
         font-size: 1rem;
+        text-align: center;
         /* line-height: 1.5rem; */
+    }
+    #section4 .slider .slick-active div .img_count .slide_box1 a {
+        /* display: block;
+        width: 85px;
+        padding: 10px 30px;
+        border: 1px solid #666666;
+        border-radius: 50px;
+        transform: translateY(50px);
+        opacity: 0;
+        animation: 4s moving 1s forwards; */
+        margin: 0 auto;
     }
     #section4 .slider .slick-active div .img_count img {
         /* transform: translateY(50px);
         opacity: 0; */
-        margin-right: -100px;
+        margin-left: 25%;
         /* animation: 4s moving 1.5s forwards; */
+        grid-area: area1;
+        height: 100%;
        
     }
     #section4 .slick-prev::after {
@@ -1189,13 +1225,26 @@ h2{
         bottom: 50%;
     }
     #section4 .lazy div .img_count.flex{
-        justify-content: space-between;
+        /* justify-content: space-between; */
+        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+        grid-template-areas:
+        'area1'
+        'area2'
     }
-    #footer .foot_bottom .foot_txt3 h4 {
-        font-size: 1.2rem;
-        /* font-weight: 700;
-        padding-right: 50px; */
+    #section4 .slider .slick-active div .img_count .slide_box1 h2 {
+        transform: translateY(50px);
+        opacity: 0;
+        animation: 4s moving forwards;
+        line-height: 3rem;
+        padding-bottom: 20px;
+        text-align: center;
+
     }
+
     #footer .foot_top .flex .foot_txt1 a {
         margin: 27px 20px;
     }
@@ -1215,6 +1264,10 @@ h2{
         align-items: center;
         display: block;
     }
+}
+
+@media all and (max-width:1062px){
+
 }
 
 @media all and (max-width:767px){

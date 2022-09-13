@@ -28,15 +28,24 @@ $(function(){
 $(function(){
     var btn_sta = 0;
         $('.con_btn').click(function(){
-            if (btn_sta == 0) {
                 $('.consulting_box').addClass('active');
-                btn_sta = 1;
-            } else { 
-                $('.consulting_box').removeClass('active');
-                btn_sta = 0; 
-            }
-        })
-  })//end
+           })
+           $('.consulting .consulting_box img').click(function(){
+            $('.consulting_box').removeClass('active'); 
+           })
+})//end
+// $(function(){
+//     var btn_sta = 0;
+//         $('.con_btn').click(function(){
+//             if (btn_sta == 0) {
+//                 $('.consulting_box').addClass('active');
+//                 btn_sta = 1;
+//             } else { 
+//                 $('.consulting_box').removeClass('active');
+//                 btn_sta = 0; 
+//             }
+//         })
+// })//end
 
   /*탑버튼*/
 
