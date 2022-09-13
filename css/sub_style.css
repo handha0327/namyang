@@ -81,12 +81,12 @@ h2{
     height: 26px;
     color: #222222;
     align-items: center;
-    transition: 1.5s;
+    /* transition: 1.5s; */
     cursor: pointer;
 }
 #sub_header .language .btn_lang.on{
     color: #000000;
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 #sub_header .language #content{
     background-color: #ffffff;
@@ -131,11 +131,11 @@ h2{
     font-weight: 700;
     color: #222222;
     height: 66px;
-    transition: 1.5s;
+    /* transition: 1.5s; */
 }
 #sub_header .sub_gnb > li > a.on{
     color: #000000;
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 #sub_header .sub_gnb >li >a:hover{
     color:#006940;

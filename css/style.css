@@ -78,12 +78,12 @@ h2{
     height: 26px;
     color: #ffffff;
     align-items: center;
-    transition: 1.5s;
+    /* transition: 1.5s; */
     cursor: pointer;
 }
 #header .language .btn_lang.on{
     color: #000000;
-    transition: 0.5s;
+
 }
 #header .language #content{
     background-color: #ffffff;
@@ -128,11 +128,11 @@ h2{
     font-weight: 700;
     color: #ffffff;
     height: 66px;
-    transition: 1.5s;
+    /* transition: 1.5s; */
 }
 #header .gnb > li > a.on{
     color: #000000;
-    transition: 0.5s;
+
 }
 #header .gnb >li >a:hover{
     color:#006940;
@@ -580,12 +580,18 @@ h2{
     opacity: 0;
     animation: 4s moving 1s forwards;
 }
+#section4 .slider div .img_count img{
+    width: 70%;
+    height: 70%;
+}
+
 #section4 .slider .slick-active div .img_count img{
     transform:translateY(50px);
     opacity: 0;
     /* margin-right: 50px; */
     animation: 4s moving 1.5s forwards;
-    width: 100%;
+  
+   
 }
 
 @keyframes moving{
@@ -863,18 +869,27 @@ h2{
 #quick_btn .consulting .consulting_box{
     background-color: #f3f3f3;
     border-radius: 10px;
-    padding: 30px;
+    /* padding: 30px; */
     position: absolute;
-    top: -0px;
+    bottom: 100px;
     right: 0;
-    display: none;
-    opacity: 0;
+    /* display: none; */
+    z-index: -1;
+    height: 0;
+    overflow: hidden;
+    transition: 0.8s;
+    padding: 0 30px;
+    /* box-sizing: border-box; */
+    /* opacity: 0; */
 }
 #quick_btn .consulting .consulting_box.active{
-    display: block;
-    top: -530px;
-    opacity: 1;
+    /* display: block; */
+    padding: 30px ;
+    height: 457px;
+    /* bottom: 100px; */
+    /* opacity: 1; */
 }
+
 
 #quick_btn .consulting .consulting_box h4{
     font-size: 1.3rem;
@@ -923,16 +938,27 @@ h2{
 #quick_btn .namyangi, #quick_btn .namyangmall{
     position: relative;
 }
-#quick_btn .namyangi .i_on, #quick_btn .namyangmall .mall_on{
+#quick_btn .namyangi a, #quick_btn .namyangmall a{
+    display: block;
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: -1;
     border-radius: 50px;
-    display: none;
+    height: 82px;
+    /* display: none; */
+    width: 82px;
+    transition: 0.8s;
+    overflow: hidden;
+    
 }
-#quick_btn .namyangi.active .i_on, #quick_btn .namyangmall.active .mall_on{
-    display: block;
+#quick_btn .namyangi .i_on, #quick_btn .namyangmall .mall_on{
+    width: 273px;
+}
+
+#quick_btn .namyangi.active a, #quick_btn .namyangmall.active a{
+    /* display: block; */
+    width: 273px;
 }
 
 @media all and (max-width:1570px){
@@ -1132,8 +1158,7 @@ h2{
         opacity: 0; */
         margin-right: -100px;
         /* animation: 4s moving 1.5s forwards; */
-        width: 70%;
-        height: 70%;
+       
     }
     #section4 .slick-prev::after {
         content: '';
