@@ -1,0 +1,747 @@
+#wrap{
+    overflow: hidden;
+}
+
+.inner{
+    max-width:1920px; 
+    /* min-width: 1200px;  */ /**반응형에서는 더이상 작아지면 안된다고 하는 것을 조심해야함. 반응형은 계속 작아져야함.**/
+    margin: 0 auto;
+    padding: 0 50px;
+    box-sizing: border-box; /*box-sizing 안 주면 실질적으로 padding 때문에 width가  커짐*/
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+button{
+    border: none;
+}
+
+b{
+    font-weight: normal;
+    display: block;
+}
+
+h1{
+    font-size: 3.9rem;
+    font-weight: 700;
+    line-height: 5rem;
+}
+
+h2{
+    font-size: 2.7rem;
+    font-weight: 700;
+    line-height: 5rem;}
+
+
+#sub_header{}
+#section{}
+#footer{}
+
+/*********************header****************************/
+#sub_header{
+    z-index: 9;
+    position: absolute;
+    width: 100%;
+    height: 110px;
+    /* padding-top: 55px; */
+    transition: 1.5s;
+    background-color: #ffffff;
+}
+#sub_header.on{
+    background-color: #ffffff;
+    color: #222222;
+   height: 200px;
+    transition: 0.5s;
+}
+#sub_header.on::before{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #c7c7c7;
+    display: block;
+    position: absolute;
+    top: 127px;
+}
+#sub_header .logo{
+    padding-top: 35px;
+}
+#sub_header .logo a{
+    width: 100%;
+}
+#sub_header .language{
+    margin-right: 46px;
+    width: 48px;
+    padding-top: 55px;
+}
+#sub_header .language .btn_lang{
+    height: 26px;
+    color: #222222;
+    align-items: center;
+    transition: 1.5s;
+    cursor: pointer;
+}
+#sub_header .language .btn_lang.on{
+    color: #000000;
+    transition: 0.5s;
+}
+#sub_header .language #content{
+    background-color: #ffffff;
+    width: 48px;
+    height: 117px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    margin-top: 20px;
+    display: none;
+    cursor: pointer;
+}
+#sub_header .language #content p{
+    padding: 8px 0;
+}
+
+
+#sub_header .header_icon{
+    padding-top: 55px;
+}
+#sub_header .header_icon img{
+    height: 36px;
+}
+/*********************nav****************************/
+#sub_header .flex{
+    justify-content: space-between;
+}
+#sub_header .sub_gnb{
+    padding-top: 55px;
+}
+#sub_header .sub_gnb > li{
+    width: 115px;
+    text-align: center;
+    margin: 0 30px;
+    position: relative;
+}
+#sub_header .sub_gnb > li > a{
+    display: block;
+    /* line-height: 100px; */
+    font-size: 1rem;
+    position: relative;
+    font-weight: 700;
+    color: #222222;
+    height: 66px;
+    transition: 1.5s;
+}
+#sub_header .sub_gnb > li > a.on{
+    color: #000000;
+    transition: 0.5s;
+}
+#sub_header .sub_gnb >li >a:hover{
+    color:#006940;
+}
+#sub_header .sub_gnb > li > a::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #006940;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    transform: scaleX(0);
+    transition: 0.5s;
+}
+#sub_header .sub_gnb > li > a:hover::after{
+    transform: scaleX(1);
+} /*추가적인  디자인 하고 싶을 때 이런 구조로 하기.*/
+#sub_header .sub_gnb .depth2{
+    position: absolute; /*top left bottom right 안 주면 그자리 그대로*/
+    width: 100%; /*부모에 맞춰서 100%. 부모에게 position: relative 주기*/
+    height: 0;
+    overflow: hidden; /*height가 0이기때문에 숨겨짐*/
+    /* margin: 25px 0; */
+}
+/*#sub_header .gnb li:hover depth2{hegith:200px; transition: 0.5s;}를 주면 각각의 li를 선택했을 때 그 li의 ul들만 나옴.*/
+#sub_header .sub_gnb:hover .depth2{
+    height: 200px; 
+    transition: 0.5s;
+    padding: 20px 0;
+}
+#sub_header .sub_gnb .depth2 a{
+    display: block;
+    padding: 10.5px 0;
+    text-align: center;
+    font-size: 1rem; /*원하는 크기 나누기 기존 크기*/
+    font-weight: 400;
+    color: #222222;
+    box-sizing: border-box;
+}
+#sub_header .sub_gnb .depth2 a:hover{
+    font-weight: 700;
+    color: #006940;
+}
+#sub_header .sub_gnb::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 128px;
+    transition: 0.8s;
+} /* nav 펼쳐진는 부분 */
+#sub_header .sub_gnb:hover::before{
+    height: 372px;
+    transition: 0.5s;
+    padding: 15px 0;
+}
+
+/***********************header.scroll********************/
+#sub_header.scroll{
+    background-color: #ffffff; 
+    height: 128px;transition: top 0.5s;
+    z-index: 10;
+    position: fixed;
+}
+#sub_header.scroll .gnb > li > a {
+    color: #222222;
+}
+#sub_header.scroll .language .btn_lang{
+    color: #222222;
+}
+
+
+
+
+/*********************main_tit****************************/
+#main_tit{
+    padding-top: 159px;
+    position: relative;
+    z-index: -1;
+}
+#main_tit::after{
+    content: '';
+    background-color: #006940;
+    width: 645px;
+    height: 131px;
+    border-top-left-radius: 90px;
+    position: absolute;
+    bottom: -65px;
+    left: 0;
+    z-index: 2;
+}
+#main_tit img{
+    display: block;
+    margin-left: auto;
+}
+#main_tit h1{
+    position: absolute;
+    top: 40%;
+    left: 105px;
+}
+#main_tit .tit_bread{
+    align-items: left;
+    position: absolute;
+    bottom: -17px;
+    left: 106px;
+    z-index: 3;
+}
+#main_tit .tit_bread img{
+    width: 37px;
+    height: 37px;
+}
+#main_tit .tit_bread p{
+    font-size: 1.3rem;
+    color: #ffffff;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+#main_tit .tit_bread p span{
+    padding: 0 15px;
+}
+
+
+/*********************section1****************************/
+#section1{
+    padding-top: 165px;
+}
+#section1 .esg img{
+    display: block;
+    margin: 0 auto;
+    width: 1236px;
+}
+#section1 .esg .esg_txt{
+    text-align: center;
+    display: block;
+}
+#section1 .esg .esg_txt p{
+    display: inline;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 700;
+}
+#section1 .esg .esg_txt p:nth-child(1){
+    padding-right: 110px;
+}
+#section1 .esg .esg_txt p:nth-child(2){
+    padding-right: 200px;
+}
+
+
+
+/*********************section2****************************/
+#section2 {
+    padding-top: 182px;
+}
+#section2 .sec2_tit{
+    text-align: center;
+    line-height: 3.5rem;
+}
+#section2 .sec2_tit span{
+    color: #5FC607;
+}
+#section2 .sec2_txt{
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.8rem;
+    padding-top: 60px;
+}
+#section2 .sec2_txt span{
+    color: #5FC607;
+    font-weight: 700;
+}
+
+
+/*********************section3****************************/
+#section3{
+    padding-top: 170px;
+}
+#section3 .sec3_tit{
+    text-align: center;
+}
+#section3 .circle_txt{
+    width: 1104px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+/*********************section4****************************/
+#section4{
+    padding-top: 86px;
+}
+#section4 .sec4_tit{
+    text-align: center;
+}
+#section4 .sec4_txt{
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    padding-bottom: 60px;
+}
+#section4 table {
+    width: 1202px;
+    border-top: 1px solid #c1c1c1;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+#section4 table th, #section4 table td {
+    border-bottom: 1px solid #c1c1c1;
+    border-left: 1px solid #c1c1c1;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+#section4 table th{
+    padding: 10px 0;
+}
+#section4 table td{
+    padding: 33px 0;
+}
+#section4 table th:first-child, #section4 table td:first-child {
+    border-left: none;
+}
+#section4 .sec4_table table tr:nth-child(2){
+    background-color: rgba(125,194, 66, 0.3);
+}
+
+
+/*********************section5****************************/
+#section5{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#section5 .sec5_tit{
+    text-align: center;
+}
+#section5 .sec5_txt{
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    padding-top: 60px;
+}
+#section5 .sec5_txt span{
+    color: #5FC607;
+    font-weight: 700;
+}
+#section5 .sec5_chart{
+    position: relative;
+    padding-top: 60px;
+}
+#section5 .sec5_chart::before{
+    content: ''; 
+    display: block; 
+    width: 1px; 
+    height: 164px;
+    background-color: #d9d9d9; 
+    position: absolute; 
+    top: 234px; 
+    left: 50%;
+}
+#section5 .sec5_chart > p span{
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: block;
+    width: 173px;
+    height: 173px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    color: #000000;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 auto;
+    position: relative;
+}
+
+#section5 .sec5_chart > p::before{
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #006940;
+    border-radius: 50%;
+    position: absolute;
+    top: 230px;
+    left: 49.9%;
+    z-index: 3;
+}
+#section5 .sec5_chart .flex{
+    justify-content: space-around;
+}
+#section5 .sec5_chart > div{
+    padding-top: 164px;
+    margin: 0 300px;
+    position: relative;
+}
+#section5 .sec5_chart > div::before{
+    content: ''; 
+    display: block; 
+    width: 66.7%; 
+    height: 1px;
+    background-color: #d9d9d9; 
+    position: absolute; 
+    top: 100px; 
+    left: auto;
+}
+#section5 .sec5_chart .chart_cont .cont_tit{
+    display: block;
+    /* width: 280px;
+    height: 50px; */
+    background-color: #006940;
+    color: #ffffff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 12px 0;
+}
+
+#section5 .sec5_chart div .chart_cont{
+    position: relative;
+}
+#section5 .sec5_chart div .chart_cont::before{
+    content: ''; 
+    display: block; 
+    width: 1px; 
+    height: 63px;
+    background-color: #d9d9d9; 
+    position: absolute; 
+    top: -64px; 
+    left: 50%;
+}
+#section5 .sec5_chart div .chart_cont:nth-child(2):before{
+    display: none;
+}
+#section5 .sec5_chart div .chart_cont div{
+    width: 280px;
+    height: 200px;
+    background-color: #d9d9d9;
+    border-radius: 15px;
+    margin-top: 12px;
+}
+#section5 .sec5_chart div .chart_cont div p{
+    margin-bottom: 7px;
+    margin-left: 24px;
+}
+#section5 .sec5_chart div .chart_cont div p:nth-child(1){
+    padding-top: 25px;
+}
+#section5 .sec5_chart div .chart_cont .cont_eng{
+    display: block;
+    font-size: 2rem;
+    color: #ffffff;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************footer****************************/
+
+#footer{
+    background-color: #f0f0f0;
+    color: #000000;
+}
+#footer .foot_top {
+    border-bottom: 1px solid #bababa;
+}
+#footer .inner .flex {
+    justify-content: space-between;
+}
+#footer .inner .foot_top .flex{
+    justify-content: space-between;
+}
+#footer .inner .foot_top > .flex{
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 90px;
+}
+#footer .foot_top .flex .foot_txt1 a{
+    margin: 27px 47px;
+}
+#footer .foot_top .flex .foot_txt1 a:hover{
+    color: #006940;
+    font-weight: 700;
+}
+#footer .foot_top .flex .foot_txt1 a:first-child{
+    margin-left: 0;
+}
+#footer .foot_top .foot_icon a span{
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+#footer .foot_top .foot_icon a:hover span{
+    background-color: #5FC607;
+}
+#footer .foot_top .foot_icon a span:last-child{
+    margin-right: 0;
+}
+#footer .foot_top .foot_icon a img{
+    width:30px;
+}
+
+#footer .foot_bottom .foot_txt2{
+    padding-top: 40px;
+    line-height: 1.3rem;
+    padding-bottom: 50px;
+}
+#footer .foot_bottom .foot_txt2 p:last-child{
+    padding-top: 18px;
+}
+#footer .foot_bottom .foot_txt3{
+    padding-top: 40px;
+    margin-right: 90px;
+}
+#footer .foot_bottom .foot_txt3 h4{
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-right: 50px;
+}
+#footer .foot_bottom .foot_txt3 div a{
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #006940;
+}
+#footer .foot_bottom .foot_txt3 div p b{
+    display: inline-block;
+    font-weight: 700;
+    padding-right: 13px;
+}
+#footer .foot_bottom .foot_txt3 div p{
+    line-height: 1.3rem;
+}
+#footer .foot_bottom .foot_txt3 div p:nth-of-type(1){
+    padding-top: 15px;
+}
+
+/**********************quick_btn************************/
+#quick_btn{
+    position: fixed;
+    right: 48px;
+    bottom: 40px;
+}
+#quick_btn div button{
+    display: block;
+    padding-top: 10px;
+}
+#quick_btn .consulting .con_btn img{
+    height: 43px;
+}
+#quick_btn .consulting .con_btn span{
+    background-color: #5FC607;
+    border-radius: 50%;
+    display: block;
+    width: 82px;
+    height: 82px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.25);
+}
+#quick_btn .namyangmall .mall_btn img{
+    height: 29px;
+}
+#quick_btn .namyangi .i_btn img{
+    height: 60px;
+}
+#quick_btn .namyangmall .mall_btn span, #quick_btn .namyangi .i_btn span{
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+    width: 82px;
+    height: 82px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.25);
+}
+#quick_btn .top_btn{
+    background-color: #222222;
+    /* padding: 0 30px 8px 30px; */
+    width: 82px;
+    height: 31px;
+    border-radius: 50px;
+    margin-top: 10px;
+    font-size: 0px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.25);
+}
+#quick_btn .top_btn::after{
+    content: ''; 
+    display: block; 
+    width:10px; 
+    height:10px;
+    border-bottom:2px solid #a7a7a7; 
+    border-right: 2px solid #a7a7a7; 
+    margin: auto;
+    transform: rotate(223deg) translate(5px, 5px);
+    text-align: center;
+}
+
+/**클릭시**/
+/* #quick_btn div, #quick_btn button{
+    box-shadow: 4px 3px 4px rgba(0,0,0,0.25) ;
+    border-radius: 50%;
+} */
+#quick_btn .consulting{
+    position: relative;
+}
+#quick_btn .consulting .consulting_box{
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 30px;
+    position: absolute;
+    top: -0px;
+    right: 0;
+    display: none;
+    opacity: 0;
+}
+#quick_btn .consulting .consulting_box.active{
+    display: block;
+    top: -530px;
+    opacity: 1;
+}
+
+#quick_btn .consulting .consulting_box h4{
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.5rem;
+}
+#quick_btn .consulting .consulting_box h4 span{
+    color: #006940; 
+}
+#quick_btn .consulting .consulting_box div{
+    padding-top: 17px;
+}
+#quick_btn .consulting .consulting_box div div{
+    padding-top: 10px;
+}
+#quick_btn .consulting .consulting_box div div label{
+    font-size: 0;
+}
+#quick_btn .consulting .consulting_box div div:nth-child(2) label{
+    position: absolute;
+    bottom: 5px;
+    left: 75px;
+}
+#quick_btn .consulting .consulting_box div div input{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #989898;
+}
+#quick_btn .consulting .consulting_box div textarea{
+    width: 340px;
+    height: 226px;
+    margin: 25px 0 10px 0;
+    border-color: #989898;
+}
+#quick_btn .consulting .consulting_box button{
+    background-color: #006940;
+    padding: 5px 34px;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0 auto;
+}
+#quick_btn .namyangi, #quick_btn .namyangmall{
+    position: relative;
+}
+#quick_btn .namyangi .i_on, #quick_btn .namyangmall .mall_on{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 50px;
+    display: none;
+}
+#quick_btn .namyangi.active .i_on, #quick_btn .namyangmall.active .mall_on{
+    display: block;
+}
+
