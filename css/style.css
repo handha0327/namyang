@@ -328,13 +328,20 @@ h2{
     width: 581px;
     position: relative;
     overflow: hidden;
+    background: rgba(0,0,0,0.2);
+}#section1 .sec1_list_pc .sec1_img:hover{
+    background: rgba(0,0,0,0.4);
 }
+
 #section1 .sec1_list_pc .sec1_img img{
     transition-duration: 0.5s;
+    position: relative;
+    z-index: -1;
 }
 #section1 .sec1_list_pc .sec1_img:hover img{
     transform: scale(1.1);
     transition-duration: 0.5s;
+
 }
 #section1 .sec1_list_pc .sec1_img h3{
     position: absolute;
@@ -398,12 +405,12 @@ h2{
 }
 #section2 .flex .rigth_txt{
     position: relative;
-    width: 50%;
-        right: -150px;
+    width: 44%;
 }
 #section2 .flex .rigth_txt .img_count img{
-    width: 80%;
+    width: 100%;
     overflow: hidden;
+    object-fit: cover;
 }
 
 #section2 .flex .rigth_txt2{
@@ -412,11 +419,11 @@ h2{
     padding-top: 50px;
     background-color: #7DC242;
     width: 90%;
-    height: 50%;
+    height: 45%;
     display: block;
     border-top-left-radius: 90px;
     position: absolute;
-    bottom: -90px;
+    bottom: -84px;
     right: 300px;
     z-index: 2;
 }
@@ -444,8 +451,8 @@ h2{
     transform: rotate(133deg);
     translate: (-2px -2px);
     position: absolute;
-    left: -1030px;
-    bottom: 300px;
+    left: -136px;
+    bottom: 400px;
 }
 #section2 .slick-next::after{content: ''; 
     display: block; 
@@ -457,8 +464,8 @@ h2{
     transform: rotate(315deg);
     translate: (-2px -2px);
     position: absolute;
-    right: 0px;
-    bottom: 300px;
+    right: -110px;
+    bottom: 400px;
 }
 
 /*********************section3****************************/
@@ -471,6 +478,7 @@ h2{
     background-repeat: no-repeat;
     height: 929px;
     margin: 0 154px;
+    background-position: 50%;
 }
 #section3 .sec3_tit{
     text-align: center;
@@ -1053,22 +1061,40 @@ h2{
 
 @media all and (max-width:1479px){
     #section2 .flex {
-        justify-content: space-between;
+        justify-content: center;
+        flex-direction: column;
         padding-top: 100px;
         margin: 0 100px;
         position: relative;
+        
+    }
+    #section2 .flex .left_tit {
+        /* padding-top: 159px;*/
+        width: 100%;
+        /* margin-left: 50px;  */
+    }
+    #section2 .flex .left_tit h4 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 3rem;
+        text-align: center;
+    }
+    #section2 .flex .left_tit p {
+        /* font-size: 1.2rem; */
+        display: none;
     }
     #section2 .flex .rigth_txt {
         position: relative;
         width: 40%;
         right: -74px;
         padding-top: 41px;
+        margin: 0 auto;
     }
     #section2 .flex .rigth_txt2 {
         padding-top: 20px;
         /* background-color: #7DC242;  */
         width: 100%;
-        height: 30%;
+        height: 24%;
         right: 0px;
         /* z-index: 2; */
         bottom: 23px;
@@ -1252,9 +1278,42 @@ h2{
 }
 
 @media all and (max-width:1207px){
+    #section2 .flex {
+         justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 100px;
+        margin: 0 100px;
+        position: relative;
+    }
+    #section2 .flex .rigth_txt2 {
+        padding-top: 20px;
+        /* background-color: #7DC242; */
+        width: 100%;
+        height: 20%;
+        right: 0px;
+        /* z-index: 2; */
+        bottom: 23px;
+    }
+    #section2 .flex .rigth_txt2 .txt h4 {
+        font-size: 1.2rem;
+        /* font-weight: 700; */
+        line-height: 1.5rem;
+        padding-top: 4px;
+    }
+    #section3 .inner {
+        background-image: url(../images/care_cure.jpg);
+        background-size:cover;
+        background-repeat: no-repeat;
+        margin: 0 154px;
+        height: auto;
+        background-position: 50%;
+    }
+    #section3 .icon_box{
+        padding-bottom: 50px;
+    }
     #section3 .icon_box.flex {
         justify-content: inherit;
-        /* padding-top: 160px; */
+        padding-top: 100px;
         display: block;
     }
     #section3 .icon_box .icon {
@@ -1264,10 +1323,30 @@ h2{
         align-items: center;
         display: block;
     }
+    #section3 .icon_box .icon_wrap{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 40px;
+    }
+    #section3 .icon_box .txt {
+        /* text-align: center;
+        font-size: 1.3rem;
+        line-height: 2rem; */
+        padding-top: 20px;
+        /* color: #ffffff; */
+    }
+    
 }
 
 @media all and (max-width:1062px){
-
+    #section2 .flex {
+        justify-content: space-between;
+        padding-top: 100px;
+        margin: 0 100px;
+        position: relative;
+    }
 }
 
 @media all and (max-width:767px){

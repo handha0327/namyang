@@ -467,7 +467,7 @@ h2{
     display: block; 
     width: 1px; 
     height: 63px;
-    background-color: #d9d9d9; 
+    background-color: #eeeeee; 
     position: absolute; 
     top: -64px; 
     left: 50%;
@@ -478,7 +478,7 @@ h2{
 #section5 .sec5_chart div .chart_cont div{
     width: 280px;
     height: 200px;
-    background-color: #d9d9d9;
+    background-color: #eeeeee;
     border-radius: 15px;
     margin-top: 12px;
 }
@@ -491,11 +491,12 @@ h2{
 }
 #section5 .sec5_chart div .chart_cont .cont_eng{
     display: block;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
     color: #ffffff;
     position: absolute;
     bottom: 30px;
-    right: 30px;
+    right: 20px;
     z-index: 5;
 }
 
