@@ -1658,6 +1658,35 @@ h2{
     #section5 .inner div:hover > a{
         animation: none;
     }
+    #footer .inner .foot_top > .flex {
+        /*justify-content: space-between;
+        width: 100%;*/
+        margin-right: 0px;
+    }
+    #footer .inner .foot_top .foot_txt1.flex {
+        display: grid;
+        grid-template-areas: 
+        'area1 area2'
+        'area3 area4';
+    }
+    #footer .foot_top .flex .foot_txt1 a {
+        margin: 27px auto;
+    }
+    #footer .foot_top .foot_txt1 a:nth-child(1){
+        grid-area: area1;
+    }
+    #footer .foot_top .foot_txt1 a:nth-child(2){
+        grid-area: area2;
+    }
+    #footer .foot_top .foot_txt1 a:nth-child(3){
+        grid-area: area3;
+    }
+    #footer .foot_top .foot_txt1 a:nth-child(4){
+        grid-area: area4;
+    }
+    #footer .foot_top .foot_icon{
+        margin: auto 0;
+    }
 }
 
 @media all and (max-width:875px){
