@@ -4,11 +4,13 @@ $(function(){
             $('#header').addClass('scroll');
             $('#sub_header').addClass('scroll');
             $('#header .header_icon img').attr('src','images/mypage_black.png');
+            $('.open1').addClass('scroll');
         } else {
            $('#header').removeClass('scroll');
            $('#sub_header').removeClass('scroll');
            $('#header .header_icon img').attr('src','images/mypage_white.png');
            $('#sub_header .header_icon img').attr('src','images/mypage_black.png');
+           $('.open1').removeClass('scroll');
         }
       })
 
