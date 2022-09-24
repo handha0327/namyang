@@ -704,7 +704,7 @@ h2{
     position: fixed;
     right: 48px;
     bottom: 40px;
-    z-index: 100;
+    /* z-index: 100; */
 }
 #quick_btn div button{
     display: block;
@@ -1004,7 +1004,7 @@ h2{
     }
 
     #section1 {
-        padding-top: 365px;
+        padding-top: 250px;
     }
     #section1 .esg .esg_txt p {
         /*display: inline;
@@ -1012,6 +1012,12 @@ h2{
         font-size: 1.2rem;
         /*font-weight: 700;
         padding-right: 5%;*/
+    }
+    #section2 {
+        padding-top: 100px;
+    }
+    #section3 {
+        padding-top: 100px;
     }
     #section5 .sec5_chart > div {
         /*padding-top: 164px;*/
@@ -1085,6 +1091,48 @@ h2{
         display: none;
     }#section3 .circle_txt:nth-of-type(2){
         display: block;
+    }
+    #section5{
+        padding-bottom: 50px;
+    }
+    #section5 .sec5_chart > p {
+        display : none;
+    }
+    #section5 .sec5_chart .flex {
+        display: block;
+    }    
+    #section5 .sec5_chart > div::before {
+        display: none;
+    }
+    #section5 .sec5_chart div .chart_cont {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+    }
+    #section5 .sec5_chart div .chart_cont div {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 30px;
+    }
+    #section5 .sec5_chart div .chart_cont::before {
+        content: '';
+        display: none;
+        width: 1px;
+        height: 63px;
+        background-color: #eeeeee;
+        position: absolute;
+        top: -64px;
+        left: 50%;
+    }
+    #section5 .sec5_chart::before {
+        content: '';
+        display: none;
+        width: 1px;
+        height: 164px;
+        background-color: #d9d9d9;
+        position: absolute;
+        top: 234px;
+        left: 50%;
     }
 }
 
@@ -1245,43 +1293,7 @@ h2{
         line-height: 1.4rem;
         padding-top: 20px;
     }
-    #section5 .sec5_chart > p {
-        display : none;
-    }
-    #section5 .sec5_chart .flex {
-        display: block;
-    }    
-    #section5 .sec5_chart > div::before {
-        display: none;
-    }
-    #section5 .sec5_chart div .chart_cont {
-        position: relative;
-        width: 80%;
-        margin: 0 auto;
-    }
-    #section5 .sec5_chart div .chart_cont div {
-        width: 100%;
-        height: 200px;
-        margin-bottom: 30px;
-    }
-    #section5 .sec5_chart div .chart_cont::before {
-        content: '';
-        display: block;
-        width: 1px;
-        height: 63px;
-        background-color: #eeeeee;
-        position: absolute;
-        top: -64px;
-        left: 50%;
-    }
-    #section5 .sec5_chart::before {
-        content: '';
-        display: none;
-        width: 1px;
-        height: 164px;
-        background-color: #d9d9d9;
-        position: absolute;
-        top: 234px;
-        left: 50%;
+    #section5 .sec5_chart > div{
+        padding: 0;
     }
 }
