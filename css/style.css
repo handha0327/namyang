@@ -645,6 +645,9 @@ h2{
 #banner img{
     width: 100%;
 }
+#banner a:nth-of-type(2){
+    display: none;
+}
 
 /*********************section4****************************/
 #section4 {
@@ -682,20 +685,24 @@ h2{
     padding-left: 100px;
     padding-top: 200px;
 }
-#section4 .slider .slick-active div .img_count .slide_box1 h2{
+#section4 .slider div .img_count .slide_box1 h2{
     transform:translateY(50px);
     opacity: 0;
-    animation: 4s moving forwards;
     line-height: 3rem;
     padding-bottom: 20px;
 }
-#section4 .slider .slick-active div .img_count .slide_box1 p{
+#section4 .slider .slick-active div .img_count .slide_box1 h2{
+    animation: 4s moving forwards;
+}
+#section4 .slider div .img_count .slide_box1 p{
     margin-bottom: 53px;
-    transform:translateY(50px);
     opacity: 0;
+    transform:translateY(50px);
+}
+#section4 .slider .slick-active div .img_count .slide_box1 p{
     animation: 4s moving 0.5s forwards;
 }
-#section4 .slider .slick-active div .img_count .slide_box1 a{
+#section4 .slider div .img_count .slide_box1 a{
     display: block;
     width: 85px;
     padding: 10px 30px;
@@ -703,6 +710,8 @@ h2{
     border-radius: 50px;
     transform:translateY(50px);
     opacity: 0;
+}
+#section4 .slider .slick-active div .img_count .slide_box1 a{
     animation: 4s moving 1s forwards;
 }
 #section4 .slider div .img_count img{
@@ -934,7 +943,7 @@ h2{
     position: fixed;
     right: 48px;
     bottom: 40px;
-    z-index: 100;
+    /* z-index: 100; */
 }
 #quick_btn div button{
     display: block;
@@ -1335,8 +1344,8 @@ h2{
         color: #ffffff; */
     }
     #section4 > h2 {
-        /* text-align: center;
-        line-height: 0; */
+        text-align: center;
+        line-height: 50px;
         font-size: 2.3rem;
     }
     #section4::after {
@@ -1470,7 +1479,7 @@ h2{
     #section4 > h2 > b {
         display: block;
         font-weight: 700;
-        padding-bottom: 48px;
+        /* padding-bottom: 48px; */
     }
     #section4 h2 span {
         color: #222222;
@@ -1590,6 +1599,19 @@ h2{
         line-height: 2rem;
         font-size: 1.5rem;
      }
+     #section2 .flex .rigth_txt {
+        position: relative;
+        width: 63%;
+        right: 0;
+        padding-top: 41px;
+        margin: 0 auto;
+    }
+    #section2 .flex .rigth_txt2 .txt h4 {
+        font-size: 1.4rem;
+        /* font-weight: 700; */
+        line-height: 1.5rem;
+        padding-top: 4px;
+    }
     #section2 .flex {
         justify-content: space-between;
         padding-top: 100px;
@@ -1603,6 +1625,10 @@ h2{
         margin: 0 50px;
         /*height: auto;
         background-position: 50%;*/
+    }
+    #section4 .slider div .img_count img {
+        width: 88%;
+        height: auto;
     }
     #section5 .delivery {
         /*background-image: url(../images/delivery.jpg);
@@ -1689,18 +1715,53 @@ h2{
     }
 }
 
-@media all and (max-width:875px){
+@media all and (max-width:870px){
     #section2 .flex .rigth_txt2 .txt h4 {
-        font-size: 1rem;
+        /* font-size: 1rem; */
         /* font-weight: 700; */
         line-height: 1.3rem;
         padding-top: 0;
+    }
+    #section2 .flex .rigth_txt {
+        /* position: relative; */
+        width: 81%;
+        /* right: 0;
+        padding-top: 41px;
+        margin: 0 auto; */
+    }
+    #section4 .slick-prev::after {
+        /* content: '';
+        display: block;
+        width: 33px;
+        height: 33px;
+        border-bottom: 2px solid #666666;
+        border-right: 2px solid #666666;
+        margin: auto;
+        transform: rotate(133deg);
+        translate: (-2px -2px);
+        position: absolute; */
+        left: -100px;
+        /* bottom: 50%; */
+    }
+    #section4 .slick-next::after {
+        /* content: '';
+        display: block;
+        width: 33px;
+        height: 33px;
+        border-bottom: 2px solid #666666;
+        border-right: 2px solid #666666;
+        margin: auto;
+        transform: rotate(315deg);
+        translate: (-2px -2px);
+        position: absolute; */
+        right: -100px;
+        /* bottom: 50%; */
     }
 }
 
 @media all and (max-width:767px){
     h2{
-       font-size: 2.3rem; 
+       font-size: 2rem; 
     }
     #slide .slick-active h1{
         position: absolute;
@@ -1710,5 +1771,25 @@ h2{
         /*line-height: 4rem;
         opacity: 0;
         animation: 4s main_txt forwards;*/
+    }
+    #section1 .sec1_list_pc .sec1_img h3 {
+        /* line-height: 2rem; */
+        font-size: 1rem;
+    }
+    #section2 .flex .rigth_txt2 .txt h4 {
+        font-size: 0.9rem;
+        /* font-weight: 700; */
+        /* line-height: 1.3rem; */
+        /* padding-top: 0; */
+    }
+    #banner a:nth-of-type(1){
+        display: none;
+    }
+    #banner a:nth-of-type(2){
+        display: block;
+    }
+    #section4 .slider div .img_count img {
+        width: 111%;
+        height: auto;
     }
 }

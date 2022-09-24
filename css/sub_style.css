@@ -424,6 +424,9 @@ h2{
     margin: 0 auto;
     padding-top: 60px;
 }
+#section3 .circle_txt:nth-of-type(2){
+    display: none;
+}
 
 /*********************section4****************************/
 #section4{
@@ -1040,7 +1043,7 @@ h2{
         margin: auto 0;
     }
 }
-}
+
 @media all and (max-width:890px){
     #section5 .sec5_chart > p span {
         background-color: #ffffff;
@@ -1062,5 +1065,13 @@ h2{
     #section5 .sec5_chart div .chart_cont div {
         width: 200px;
         height: 176px;
+    }
+}
+
+@media all and (max-width:767px){
+    #section3 .circle_txt:nth-of-type(1){
+        display: none;
+    }#section3 .circle_txt:nth-of-type(2){
+        display: block;
     }
 }
