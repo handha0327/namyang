@@ -1793,3 +1793,170 @@ h2{
         height: auto;
     }
 }
+
+@media all and (max-width:444px){
+.inner{
+    padding : 0 10px;
+} 
+h2{
+    font-size: 1.4rem;
+}
+#header .flex {
+    /* justify-content: space-around; */
+    padding-right: 50px;
+}
+#header .logo {
+    padding-top: 46px;
+}
+#header .logo a img {
+    width: 72%;
+    padding-left: 20px;
+}
+#header .language {
+    margin-right: 20px;
+    width: 48px;
+    padding-top: 55px;
+}
+
+#slide div {
+    width: 100%;
+    height: 834px;
+    overflow: hidden;
+    position: relative;
+}
+#slide .slick-dots button {
+    background: #ffffff;
+    font-size: 0px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 10px;
+    transform: translateY(0px);
+}
+@keyframes main_txt{
+    0% {opacity: 0; bottom: 10%;}
+    100% {opacity: 1; bottom: 30%;}
+}
+
+#new {
+    display:none;
+}
+
+#section1 {
+    padding-top: 50px
+}
+#section1 h2 {
+    font-weight: 700;
+    line-height: 1.8rem;
+    text-align: center;
+}
+#section1 .sec1_list_pc .sec1_img h3 {
+    line-height: 1.3rem;
+    font-size: 1rem;
+    text-align: center;
+}
+#section1 h2 b:nth-of-type(1) {
+    display: block;
+}
+#section1 .sec1_list_pc {
+    padding-top: 20px;
+}
+
+#section2 .slick-prev::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid #666666;
+    border-right: 2px solid #666666;
+    margin: auto;
+    transform: rotate(133deg);
+    translate: (-2px -2px);
+    position: absolute;
+    left: 10px;
+    bottom: -25px;
+}
+#section2 .slick-next::after {
+    right: 10px;
+    bottom: -25px;
+    width: 20px;
+    height: 20px;
+}
+#section2 .flex {
+    justify-content: space-between;
+    padding-top: 100px;
+    margin: 0 0px;
+    position: relative;
+}
+#section2 .flex .left_tit h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+    text-align: center;
+}
+
+#section3 .inner {
+    margin: 0 30px;
+}
+
+#section4 {
+    position: relative;
+    margin: 0 30px;
+}
+#section4 > h2 {
+    text-align: center;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+}
+#section4 .slider div .img_count img {
+    width: 90%;
+    height: auto;
+}
+#section4 .slider .slick-active div .img_count .slide_box1 h2 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    padding-bottom: 20px;
+}
+#section5 .flex{
+    display: block
+}
+#section5 .delivery {
+    width: 100%;
+    margin-right: 10px;
+    height: 100px;
+}
+#section5 .employment {
+    width: 100%;
+    margin-left: 10px;
+    height: 100px;
+}
+#quick_btn .consulting .consulting_box {
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    /* padding: 30px; */
+    position: absolute;
+    bottom: -250px;
+    right: -17px;
+    /* display: none; */
+    z-index: -1;
+    height: 0;
+    overflow: hidden;
+    transition: 0.8s;
+    padding: 0 30px;
+    /* box-sizing: border-box; */
+    /* opacity: 0; */
+    z-index: 50;
+}
+
+}
+
+@media all and (max-width:366px){
+#quick_btn .consulting .consulting_box div textarea {
+    width: 240px;
+    height: 207px;
+    margin: 25px 0 10px 0;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+}
