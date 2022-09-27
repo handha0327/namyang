@@ -30,7 +30,7 @@ $(function(){
         $('.con_btn').click(function(){
                 $('.consulting_box').addClass('active');
            })
-           $('.consulting .consulting_box img').click(function(){
+           $('.consulting_box img').click(function(){
             $('.consulting_box').removeClass('active'); 
            })
 })//end

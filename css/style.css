@@ -216,7 +216,8 @@ h2{
     width: 100%;
     height: 100%; 
     z-index: 99; 
-    right:-100%
+    right:-100%;
+    top: 0;
     }
     .LeftWrap{
         width:100%; 
@@ -946,7 +947,7 @@ h2{
     position: fixed;
     right: 48px;
     bottom: 40px;
-    /* z-index: 100; */
+    z-index: 10;
 }
 #quick_btn div button{
     display: block;
@@ -1015,15 +1016,15 @@ h2{
 #quick_btn .consulting{
     position: relative;
 }
-#quick_btn .consulting .consulting_box{
+.consulting_box{
     background-color: #f3f3f3;
     border-radius: 10px;
     /* padding: 30px; */
-    position: absolute;
-    bottom: -250px;
-    right: 100px;
+    position: fixed;
+    bottom: 10px;
+    right: 140px;
     /* display: none; */
-    z-index: -1;
+    z-index: 50;
     height: 0;
     overflow: hidden;
     transition: 0.8s;
@@ -1031,7 +1032,7 @@ h2{
     /* box-sizing: border-box; */
     /* opacity: 0; */
 }
-#quick_btn .consulting .consulting_box.active{
+.consulting_box.active{
     /* display: block; */
     padding: 30px ;
     height: 480px;
@@ -1040,28 +1041,32 @@ h2{
 }
 
 
-#quick_btn .consulting .consulting_box h4{
+.consulting_box h4{
     font-size: 1.3rem;
     font-weight: 700;
     text-align: center;
     line-height: 1.5rem;
     padding-top: 20px;
 }
-#quick_btn .consulting .consulting_box h4 span{
+.consulting_box h4 b{
+    display: inline;
+    font-weight: 700;
+}
+.consulting_box h4 span{
     color: #006940; 
 }
-#quick_btn .consulting .consulting_box div div{
+.consulting_box div div{
     padding-top: 10px;
 }
-#quick_btn .consulting .consulting_box div div label{
+.consulting_box div div label{
     font-size: 0;
 }
-#quick_btn .consulting .consulting_box div div:nth-child(2) label{
+.consulting_box div div:nth-child(2) label{
     position: absolute;
     bottom: 5px;
     left: 75px;
 }
-#quick_btn .consulting .consulting_box div div input{
+.consulting_box div div input{
     display: block;
     width: 100%;
     border: none;
@@ -1069,7 +1074,7 @@ h2{
     padding-bottom: 8px;
     text-align: center;
 }
-#quick_btn .consulting .consulting_box div textarea{
+.consulting_box div textarea{
     width: 340px;
     height: 226px;
     margin: 25px 0 10px 0;
@@ -1077,11 +1082,11 @@ h2{
     background-color: #ffffff;
     border-radius: 10px;
 }
-#quick_btn .consulting .consulting_box div textarea::placeholder{
+.consulting_box div textarea::placeholder{
     text-align: center;
     padding-top: 30%;
 }
-#quick_btn .consulting .consulting_box button{
+.consulting_box button{
     background-color: #006940;
     padding: 5px 34px;
     border-radius: 50px;
@@ -1090,8 +1095,9 @@ h2{
     font-weight: 400;
     margin: 0 auto;
     margin-top: 10px;
+    display: block;
 }
-#quick_btn .consulting .consulting_box img{
+.consulting_box img{
     width: 12px;
     height: 12px;
     position: absolute;
@@ -1986,13 +1992,13 @@ h2 {
     justify-content: center;
     box-shadow: 3px 3px 5px rgb(0 0 0 / 25%);
 }
-#quick_btn .consulting .consulting_box {
+.consulting_box {
     background-color: #f3f3f3;
     border-radius: 10px;
     /* padding: 30px; */
-    position: absolute;
-    bottom: -181px;
-    right: -3px;
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
     /* display: none; */
     z-index: -1;
     height: 0;
@@ -2096,7 +2102,10 @@ h2 {
     #section3 .icon_box .icon {
         padding: 0;
     }
-    #quick_btn .consulting .consulting_box div textarea {
+    .consulting_box h4 b{
+        display: block;
+    }
+.consulting_box div textarea {
         width: 240px;
         height: 207px;
         margin: 25px 0 10px 0;
@@ -2104,5 +2113,6 @@ h2 {
         background-color: #ffffff;
         border-radius: 10px;
     }
+    
 
 }
