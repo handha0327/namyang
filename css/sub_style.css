@@ -458,6 +458,10 @@ h2{
 #section4 table th{
     padding: 10px 0;
 }
+#section4 table th b{
+    display: inline;
+    font-weight: 700;
+}
 #section4 table td{
     padding: 33px 0;
 }
@@ -1091,6 +1095,9 @@ h2{
         display: none;
     }#section3 .circle_txt:nth-of-type(2){
         display: block;
+    }
+    #section4 table th b{
+        display: none;
     }
     #section5{
         padding-bottom: 50px;
